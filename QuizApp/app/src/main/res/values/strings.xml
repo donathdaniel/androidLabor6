@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">QuizApp</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="quiz">QUIZ</string>
+    <string name="your_name">Your Name</string>
+    <string name="choose_contact">CHOOSE CONTACT</string>
+    <string name="get_started">GET STARTED</string>
+
+    <string name="quiz_result">Quiz result</string>
+    <string name="try_again">TRY AGAIN</string>
+
+    <string name="next">Next</string>
+</resources>
