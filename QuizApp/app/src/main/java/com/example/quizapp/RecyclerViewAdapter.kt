@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.quizapp.shared.Question
 
-class RecyclerViewAdapter(private val questionList : MutableList<Question>) : RecyclerView.Adapter<RecyclerViewAdapter.RecyclerViewViewHolder>() {
+class RecyclerViewAdapter(private val questionList : MutableList<Question>, private val mOnProductClickListener: OnQuestionClickListener) : RecyclerView.Adapter<RecyclerViewAdapter.RecyclerViewViewHolder>() {
 
     inner class RecyclerViewViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
@@ -19,13 +19,20 @@ class RecyclerViewAdapter(private val questionList : MutableList<Question>) : Re
 
         val detailsButton : Button = itemView.findViewById(R.id.detailsButton)
         val deleteButton : Button = itemView.findViewById(R.id.deleteButton)
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerViewViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.recyclerview_example_item,parent,false)
+        val holder = RecyclerViewViewHolder(itemView)
 
-
-        return RecyclerViewViewHolder(itemView)
+        // to delete the item in recycler view
+        holder.deleteButton.setOnClickListener {
+            val position = holder.adapterPosition
+            val model = questionList[position]
+            mOnProductClickListener.onDelete(model)
+        }
+        return holder
     }
 
 
@@ -53,5 +60,18 @@ class RecyclerViewAdapter(private val questionList : MutableList<Question>) : Re
 
     override fun getItemCount(): Int = questionList.size
 
+    fun removeProduct(model: Question) {
+        val position = questionList.indexOf(model)
+        questionList.remove(model)
+        notifyItemRemoved(position)
+    }
+}
+
+interface OnQuestionClickListener {
+
+    /**
+     * when the user clicks on delete icon this method will be invoked to remove item at position.
+     */
+    fun onDelete(model: Question)
 
 }

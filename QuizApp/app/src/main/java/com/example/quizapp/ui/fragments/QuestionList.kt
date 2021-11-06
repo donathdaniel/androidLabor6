@@ -8,16 +8,28 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.quizapp.OnQuestionClickListener
 import com.example.quizapp.R
 import com.example.quizapp.RecyclerViewAdapter
 import com.example.quizapp.databinding.FragmentQuestionListBinding
 import com.example.quizapp.shared.MyViewModel
+import com.example.quizapp.shared.Question
 
 
 class QuestionList : Fragment() {
 
     val sharedView : MyViewModel by activityViewModels()
     lateinit var binding: FragmentQuestionListBinding
+    private lateinit var mQuestionListAdapter: RecyclerViewAdapter
+
+    private val mOnQuestionClickListener = object : OnQuestionClickListener {
+
+        override fun onDelete(model: Question) {
+
+            // just remove the item from list
+            mQuestionListAdapter.removeProduct(model)
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,10 +45,11 @@ class QuestionList : Fragment() {
         val questionList = sharedView.questions
 
         val recycler_view = view.findViewById<RecyclerView>(R.id.recycler_view)
-
-        recycler_view.adapter = RecyclerViewAdapter(questionList)
         recycler_view.layoutManager = LinearLayoutManager(context)
         recycler_view.setHasFixedSize(true)
+
+        mQuestionListAdapter = RecyclerViewAdapter(questionList,mOnQuestionClickListener)
+        recycler_view.adapter = mQuestionListAdapter
     }
 
 }
