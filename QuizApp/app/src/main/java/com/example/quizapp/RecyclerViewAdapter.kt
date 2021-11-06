@@ -5,8 +5,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.fragment.app.commit
 import androidx.recyclerview.widget.RecyclerView
 import com.example.quizapp.shared.Question
+import com.example.quizapp.ui.fragments.StartQuiz
 
 class RecyclerViewAdapter(private val questionList : MutableList<Question>, private val mOnProductClickListener: OnQuestionClickListener) : RecyclerView.Adapter<RecyclerViewAdapter.RecyclerViewViewHolder>() {
 
@@ -25,6 +27,13 @@ class RecyclerViewAdapter(private val questionList : MutableList<Question>, priv
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerViewViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.recyclerview_example_item,parent,false)
         val holder = RecyclerViewViewHolder(itemView)
+
+        // to see details
+        holder.detailsButton.setOnClickListener {
+            val position = holder.adapterPosition
+            val model = questionList[position]
+            mOnProductClickListener.onDetails(model)
+        }
 
         // to delete the item in recycler view
         holder.deleteButton.setOnClickListener {
@@ -73,5 +82,8 @@ interface OnQuestionClickListener {
      * when the user clicks on delete icon this method will be invoked to remove item at position.
      */
     fun onDelete(model: Question)
-
+    /**
+     * when the user clicks on details icon this method will be invoked to show details about the item at position.
+     */
+    fun onDetails(model: Question)
 }

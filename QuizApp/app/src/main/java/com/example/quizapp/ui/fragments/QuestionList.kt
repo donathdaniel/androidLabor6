@@ -25,9 +25,14 @@ class QuestionList : Fragment() {
     private val mOnQuestionClickListener = object : OnQuestionClickListener {
 
         override fun onDelete(model: Question) {
-
             // just remove the item from list
             mQuestionListAdapter.removeProduct(model)
+        }
+        override fun onDetails(model: Question) {
+            val fragmentTransaction = parentFragmentManager.beginTransaction()
+            fragmentTransaction.replace(R.id.fragment_container,QuestionDetail(model))
+            fragmentTransaction.addToBackStack(null)
+            fragmentTransaction.commit()
         }
     }
 
