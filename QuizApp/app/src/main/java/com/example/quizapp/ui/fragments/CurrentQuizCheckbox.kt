@@ -22,6 +22,7 @@ class CurrentQuizCheckbox : Fragment() {
 
     val sharedView : MyViewModel by activityViewModels()
     lateinit var binding : FragmentCurrentQuizCheckboxBinding
+    lateinit var listOfCheckbox : List<CheckBox>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -62,7 +63,7 @@ class CurrentQuizCheckbox : Fragment() {
         val answer2 = binding.answer2
         val answer3 = binding.answer3
         val answer4 = binding.answer4
-        val listOfCheckbox : List<CheckBox> = listOf(answer1,answer2,answer3,answer4)
+        listOfCheckbox = listOf(answer1,answer2,answer3,answer4)
         listOfCheckbox.forEachIndexed { index, item ->
             item.text = question.answers[index].first
         }
@@ -76,37 +77,28 @@ class CurrentQuizCheckbox : Fragment() {
                         number.add(index)
                 }
                 sharedView.calculateResult(question, number)
+
+                val fragmentTransaction = parentFragmentManager.beginTransaction()
                 if(sharedView.endOfQuiz()) {
-                    val fragmentTransaction = parentFragmentManager.beginTransaction()
+
                     fragmentTransaction.replace(R.id.fragment_container,StartQuiz())
-                    fragmentTransaction.addToBackStack(null)
-                    fragmentTransaction.commit()
                 }
                 else {
                     if(sharedView.typeOfNewxtQuestion() == 1) {
-                        val fragmentTransaction = parentFragmentManager.beginTransaction()
                         fragmentTransaction.replace(R.id.fragment_container,CurrentQuizRadiobutton())
-                        fragmentTransaction.addToBackStack(null)
-                        fragmentTransaction.commit()
                     }
                     else{
-                        val fragmentTransaction = parentFragmentManager.beginTransaction()
                         fragmentTransaction.replace(R.id.fragment_container,CurrentQuizCheckbox())
-                        fragmentTransaction.addToBackStack(null)
-                        fragmentTransaction.commit()
                     }
                 }
+                fragmentTransaction.addToBackStack(null)
+                fragmentTransaction.commit()
             }
         }
     }
 
 
     private fun oneAnswerChecked() : Boolean{
-        val answer1 = binding.answer1
-        val answer2 = binding.answer2
-        val answer3 = binding.answer3
-        val answer4 = binding.answer4
-        val listOfCheckbox : List<CheckBox> = listOf(answer1,answer2,answer3,answer4) as List<CheckBox>
         listOfCheckbox.forEach { item ->
             if(item.isChecked)
                 return true

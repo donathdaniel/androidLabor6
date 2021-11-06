@@ -12,13 +12,24 @@
         <entry key="..\:/Daniel/3.year/first/Android_programozas/androidLabor5/QuizApp/app/src/main/res/layout/fragment_current_quiz_checkbox.xml" value="0.36666666666666664" />
         <entry key="..\:/Daniel/3.year/first/Android_programozas/androidLabor5/QuizApp/app/src/main/res/layout/fragment_result_quiz.xml" value="0.36666666666666664" />
         <entry key="..\:/Daniel/3.year/first/Android_programozas/androidLabor5/QuizApp/app/src/main/res/layout/fragment_start_quiz.xml" value="0.33" />
-        <entry key="..\:/Daniel/3.year/first/Android_programozas/androidLabor6/QuizApp/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Daniel/3.year/first/Android_programozas/androidLabor6/QuizApp/app/src/main/res/drawable/home_icon.xml" value="0.25925925925925924" />
+        <entry key="..\:/Daniel/3.year/first/Android_programozas/androidLabor6/QuizApp/app/src/main/res/drawable/ic_home_icon.xml" value="0.23425925925925925" />
+        <entry key="..\:/Daniel/3.year/first/Android_programozas/androidLabor6/QuizApp/app/src/main/res/drawable/ic_noun_add.xml" value="0.24102564102564103" />
+        <entry key="..\:/Daniel/3.year/first/Android_programozas/androidLabor6/QuizApp/app/src/main/res/drawable/ic_noun_list.xml" value="0.24102564102564103" />
+        <entry key="..\:/Daniel/3.year/first/Android_programozas/androidLabor6/QuizApp/app/src/main/res/drawable/ic_noun_quiz.xml" value="0.24102564102564103" />
+        <entry key="..\:/Daniel/3.year/first/Android_programozas/androidLabor6/QuizApp/app/src/main/res/drawable/ic_profile_icon.xml" value="0.24102564102564103" />
+        <entry key="..\:/Daniel/3.year/first/Android_programozas/androidLabor6/QuizApp/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Daniel/3.year/first/Android_programozas/androidLabor6/QuizApp/app/src/main/res/layout/fragment_current_quiz.xml" value="0.36666666666666664" />
         <entry key="..\:/Daniel/3.year/first/Android_programozas/androidLabor6/QuizApp/app/src/main/res/layout/fragment_current_quiz_checkbox.xml" value="0.36666666666666664" />
         <entry key="..\:/Daniel/3.year/first/Android_programozas/androidLabor6/QuizApp/app/src/main/res/layout/fragment_current_quiz_radioButton.xml" value="0.36666666666666664" />
         <entry key="..\:/Daniel/3.year/first/Android_programozas/androidLabor6/QuizApp/app/src/main/res/layout/fragment_current_quiz_radiobutton.xml" value="0.2546875" />
+        <entry key="..\:/Daniel/3.year/first/Android_programozas/androidLabor6/QuizApp/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/Daniel/3.year/first/Android_programozas/androidLabor6/QuizApp/app/src/main/res/layout/fragment_question_list.xml" value="0.33" />
         <entry key="..\:/Daniel/3.year/first/Android_programozas/androidLabor6/QuizApp/app/src/main/res/layout/fragment_result_quiz.xml" value="0.2546875" />
         <entry key="..\:/Daniel/3.year/first/Android_programozas/androidLabor6/QuizApp/app/src/main/res/layout/fragment_start_quiz.xml" value="0.36666666666666664" />
+        <entry key="..\:/Daniel/3.year/first/Android_programozas/androidLabor6/QuizApp/app/src/main/res/layout/header_navigation_drawer.xml" value="0.1" />
+        <entry key="..\:/Daniel/3.year/first/Android_programozas/androidLabor6/QuizApp/app/src/main/res/layout/recyclerview_example_item.xml" value="0.1" />
+        <entry key="..\:/Daniel/3.year/first/Android_programozas/androidLabor6/QuizApp/app/src/main/res/menu/navigation_drawer.xml" value="0.1" />
       </map>
     </option>
   </component>

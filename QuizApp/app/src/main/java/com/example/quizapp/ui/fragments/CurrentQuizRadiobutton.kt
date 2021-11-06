@@ -39,7 +39,7 @@ class CurrentQuizRadiobutton : Fragment() {
         activity?.onBackPressedDispatcher?.addCallback(viewLifecycleOwner, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 val dialogClickListener =
-                    DialogInterface.OnClickListener { dialog, which ->
+                    DialogInterface.OnClickListener { _, which ->
                         if (which == DialogInterface.BUTTON_POSITIVE) {
                             val fragmentTransaction = parentFragmentManager.beginTransaction()
                             fragmentTransaction.replace(R.id.fragment_container,StartQuiz())
@@ -67,6 +67,7 @@ class CurrentQuizRadiobutton : Fragment() {
 
 
         binding.nextButton.setOnClickListener {
+
             if(oneAnswerChecked()){
                 val number : MutableList<Int> = mutableListOf()
                 for (i in 0 until radioGroup.childCount) {
@@ -74,26 +75,21 @@ class CurrentQuizRadiobutton : Fragment() {
                         number.add(i)
                 }
                 sharedView.calculateResult(question, number)
+
+                val fragmentTransaction = parentFragmentManager.beginTransaction()
                 if(sharedView.endOfQuiz()) {
-                    val fragmentTransaction = parentFragmentManager.beginTransaction()
                     fragmentTransaction.replace(R.id.fragment_container,ResultQuiz())
-                    fragmentTransaction.addToBackStack(null)
-                    fragmentTransaction.commit()
                 }
                 else {
                     if(sharedView.typeOfNewxtQuestion() == 1) {
-                        val fragmentTransaction = parentFragmentManager.beginTransaction()
                         fragmentTransaction.replace(R.id.fragment_container,CurrentQuizRadiobutton())
-                        fragmentTransaction.addToBackStack(null)
-                        fragmentTransaction.commit()
                     }
                     else{
-                        val fragmentTransaction = parentFragmentManager.beginTransaction()
                         fragmentTransaction.replace(R.id.fragment_container,CurrentQuizCheckbox())
-                        fragmentTransaction.addToBackStack(null)
-                        fragmentTransaction.commit()
                     }
                 }
+                fragmentTransaction.addToBackStack(null)
+                fragmentTransaction.commit()
             }
         }
 

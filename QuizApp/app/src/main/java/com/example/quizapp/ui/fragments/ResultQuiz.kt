@@ -35,12 +35,12 @@ class ResultQuiz : Fragment() {
             fragmentTransaction.commit()
         }
 
-        if(sharedView.companion.points*10%10 == 0F) {
-            val points : Int = sharedView.companion.points.roundToInt()
-            binding.resultTextView.text = "$points / ${sharedView.companion.finalPoints}"
+        if(sharedView.points*10%10 == 0F) {
+            val points : Int = sharedView.points.roundToInt()
+            binding.resultTextView.text = "$points / ${sharedView.finalPoints}"
         }
         else{
-            binding.resultTextView.text = "${sharedView.companion.points} / ${sharedView.companion.finalPoints}"
+            binding.resultTextView.text = "${sharedView.points} / ${sharedView.finalPoints}"
         }
 
     }

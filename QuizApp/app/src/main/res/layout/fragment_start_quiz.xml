@@ -40,7 +40,7 @@
         android:layout_margin="48dp"
         tools:layout_editor_absoluteX="149dp"
         tools:layout_editor_absoluteY="401dp"
-        android:backgroundTint="#008080"/>
+        android:backgroundTint="@color/green"/>
 
     <Button
         android:id="@+id/getStartedButton"
@@ -49,6 +49,6 @@
         android:text="@string/get_started"
         tools:layout_editor_absoluteX="149dp"
         tools:layout_editor_absoluteY="401dp"
-        android:backgroundTint="#ff6600"/>
+        android:backgroundTint="@color/orange"/>
 
 </LinearLayout>
