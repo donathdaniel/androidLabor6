@@ -28,4 +28,8 @@
     <string name="enjoyTheApp">Enjoy the quiz app, where you can:</string>
     <string name="details">DETAILS</string>
     <string name="delete">DELETE</string>
+    <string name="answers">Answers</string>
+    <string name="add_question">Add question</string>
+    <string name="correct_answer">Correct answer</string>
+    <string name="answer">Answer</string>
 </resources>
