@@ -46,6 +46,8 @@ class StartQuiz : Fragment() {
                 Toast.makeText(this.context, "You did not give a name!", Toast.LENGTH_SHORT).show()
             }
             else{
+                sharedView.playerName = binding.editTextTextPersonName.text.toString()
+
                 sharedView.startQuiz()
                 val fragmentTransaction = parentFragmentManager.beginTransaction()
                 if(sharedView.typeOfNewxtQuestion() == 1) {

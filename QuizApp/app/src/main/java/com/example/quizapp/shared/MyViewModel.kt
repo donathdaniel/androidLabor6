@@ -43,6 +43,9 @@ val hardCodedQuestions2: MutableList<Question> = mutableListOf(
 
 class MyViewModel : ViewModel() {
 
+    var playerName : String = ""
+    var latestScore = 0F
+
     var questions: MutableList<Question> = hardCodedQuestions2
     var questionCounter : Int = 0
     var points : Float = 0F

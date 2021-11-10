@@ -38,10 +38,15 @@ class ResultQuiz : Fragment() {
         if(sharedView.points*10%10 == 0F) {
             val points : Int = sharedView.points.roundToInt()
             binding.resultTextView.text = "$points / ${sharedView.finalPoints}"
+            sharedView.latestScore = points.toString().toFloat()
         }
         else{
             binding.resultTextView.text = "${sharedView.points} / ${sharedView.finalPoints}"
+            sharedView.latestScore = sharedView.points.toString().toFloat()
         }
+
+
+
 
     }
 

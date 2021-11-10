@@ -8,10 +8,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentContainerView
 import androidx.fragment.app.commit
-import com.example.quizapp.ui.fragments.CreateQuestion
-import com.example.quizapp.ui.fragments.Home
-import com.example.quizapp.ui.fragments.QuestionList
-import com.example.quizapp.ui.fragments.StartQuiz
+import com.example.quizapp.ui.fragments.*
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.internal.NavigationMenu
 import com.google.android.material.navigation.NavigationView
@@ -32,15 +29,11 @@ class MainActivity : AppCompatActivity() {
         }
 
         val navigationView = findViewById<NavigationView>(R.id.navigationView)
-        navigationView.setNavigationItemSelectedListener { menuItem ->
-            // Handle menu item selected
-            menuItem.isChecked = true
-            drawerLayout.close()
-            true
-        }
 
         //navigation
         navigationView.setNavigationItemSelectedListener{ menuItem ->
+            menuItem.isChecked = true
+            drawerLayout.close()
             when (menuItem.itemId) {
                 R.id.navigationItem_home -> {
                     /*supportFragmentManager.commit {
@@ -58,7 +51,7 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 R.id.navigationItem_profile -> {
-                    replaceFragment(StartQuiz(),R.id.fragment_container)
+                    replaceFragment(Profile(),R.id.fragment_container)
                     return@setNavigationItemSelectedListener true
                 }
 
